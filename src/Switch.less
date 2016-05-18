@@ -1,0 +1,125 @@
+/**
+ * Switch Component Style for uxcore
+ * @author eternalsky
+ *
+ * Copyright 2015-2016, Uxcore Team, Alinw.
+ * All rights reserved.
+ */
+
+@__switch-prefix-cls: kuma-switch;
+
+@duration:.3s;
+
+.@{__switch-prefix-cls}{
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 64px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: all @duration cubic-bezier(0.35, 0, 0.25, 1);
+
+  &-inner {
+    color:#fff;
+    font-size: 14px;
+    position: absolute;
+    left: 26px;
+  }
+
+  &:after{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 2px;
+    top: 1px;
+    border-radius: 50% 50%;
+    background-color: #ffffff;
+    content: " ";
+    cursor: pointer;
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    transform: scale(1);
+    transition: left @duration cubic-bezier(0.35, 0, 0.25, 1);
+    animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+    animation-duration: @duration;
+    animation-name: rcSwitchOff;
+  }
+
+  &:hover:after{
+    transform: scale(1.1);
+    animation-name: rcSwitchOn;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px tint(#2db7f5, 80%);
+    outline: none;
+  }
+
+  &-checked{
+    border: 1px solid @brand-primary;
+    background-color: @brand-primary;
+
+    .@{__switch-prefix-cls}-inner {
+      left: 10px;
+    }
+
+    &:after{
+      left: 40px;
+    }
+  }
+
+  &-disabled{
+    cursor: no-drop;
+    background: @bg-disabled-color;
+    border-color: @bg-disabled-color;
+    .@{__switch-prefix-cls}-inner {
+        color: @text-disabled-color;
+    }
+    &:after{
+      background: @basic-100;
+      animation-name: none;
+      cursor: no-drop;
+    }
+
+    &:hover:after{
+      transform: scale(1);
+      animation-name: none;
+    }
+  }
+
+  &-label {
+    display: inline-block;
+    line-height: 20px;
+    font-size: 14px;
+    padding-left: 10px;
+    vertical-align: middle;
+    white-space: normal;
+    pointer-events: none;
+    user-select: text;
+  }
+}
+
+@keyframes rcSwitchOn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@keyframes rcSwitchOff {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
