@@ -23,7 +23,7 @@ class Demo extends React.Component {
             <div style={{
                 padding: 10
             }}>
-                <Switch checkedChildren="显示" unCheckedChildren="隐藏" disabled={false} />
+                <Switch checkedChildren="显示" unCheckedChildren="隐藏" disabled={false} onChange={function() {}}/>
             </div>
         );
     }
