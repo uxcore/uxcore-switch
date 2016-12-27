@@ -8,21 +8,17 @@
 
 const RcSwitch = require('rc-switch');
 
-class Switch extends RcSwitch {
-    constructor(props) {
-        super(props);
-    }
-}
+class Switch extends RcSwitch {}
 
 Switch.defaultProps = {
-    prefixCls: 'kuma-switch'
-}
+  prefixCls: 'kuma-switch',
+};
 
 
 // http://facebook.github.io/react/docs/reusable-components.html
 Switch.propTypes = {
-}
+};
 
-Switch.displayName = "Switch";
+Switch.displayName = 'Switch';
 
 module.exports = Switch;
