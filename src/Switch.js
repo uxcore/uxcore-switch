@@ -11,13 +11,13 @@ const RcSwitch = require('rc-switch');
 class Switch extends RcSwitch {}
 
 Switch.defaultProps = {
+  ...RcSwitch.defaultProps,
   prefixCls: 'kuma-switch',
 };
 
 
 // http://facebook.github.io/react/docs/reusable-components.html
-Switch.propTypes = {
-};
+Switch.propTypes = RcSwitch.propTypes;
 
 Switch.displayName = 'Switch';
 

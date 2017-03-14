@@ -17,27 +17,30 @@
   overflow: hidden;
   width: 64px;
   height: 24px;
-  line-height: 22px;
+  line-height: 24px;
   vertical-align: middle;
   border-radius: 12px;
-  border: 1px solid #ccc;
-  background-color: #ccc;
+  background-color: @normal-alpha-6;
   cursor: pointer;
   transition: all @duration cubic-bezier(0.35, 0, 0.25, 1);
 
+  
+
   &-inner {
     color:#fff;
-    font-size: 14px;
+    font-size: 12px;
     position: absolute;
-    left: 26px;
+    right: 12px;
   }
+
+  
 
   &:after{
     position: absolute;
     width: 18px;
     height: 18px;
-    left: 2px;
-    top: 2px;
+    left: 3px;
+    top: 3px;
     border-radius: 50% 50%;
     background-color: #ffffff;
     content: " ";
@@ -61,13 +64,10 @@
   }
 
   &-checked{
-    border: 1px solid @brand-primary;
     background-color: @brand-primary;
-
     .@{__switch-prefix-cls}-inner {
       left: 10px;
     }
-
     &:after{
       left: 42px;
     }
@@ -76,7 +76,6 @@
   &-disabled{
     cursor: no-drop;
     background: @bg-disabled-color;
-    border-color: @bg-disabled-color;
     .@{__switch-prefix-cls}-inner {
         color: @text-disabled-color;
     }
@@ -102,6 +101,14 @@
     pointer-events: none;
     user-select: text;
   }
+
+  &-no-text {
+    width: 40px;
+    &.@{__switch-prefix-cls}-checked:after {
+      left: 18px;
+    }
+  }
+  
 }
 
 @keyframes rcSwitchOn {
