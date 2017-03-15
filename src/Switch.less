@@ -7,10 +7,8 @@
  */
 
 @__switch-prefix-cls: kuma-switch;
-
-@duration:.3s;
-
-.@{__switch-prefix-cls}{
+@duration: .3s;
+.@{__switch-prefix-cls} {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -23,19 +21,13 @@
   background-color: @normal-alpha-6;
   cursor: pointer;
   transition: all @duration cubic-bezier(0.35, 0, 0.25, 1);
-
-  
-
   &-inner {
-    color:#fff;
+    color: #fff;
     font-size: 12px;
     position: absolute;
     right: 12px;
   }
-
-  
-
-  &:after{
+  &:after {
     position: absolute;
     width: 18px;
     height: 18px;
@@ -52,45 +44,39 @@
     animation-duration: @duration;
     animation-name: rcSwitchOff;
   }
-
-  &:hover:after{
+  &:hover:after {
     transform: scale(1.1);
     animation-name: rcSwitchOn;
   }
-
   &:focus {
     box-shadow: 0 0 0 2px tint(#2db7f5, 80%);
     outline: none;
   }
-
-  &-checked{
+  &-checked {
     background-color: @brand-primary;
     .@{__switch-prefix-cls}-inner {
       left: 10px;
     }
-    &:after{
+    &:after {
       left: 42px;
     }
   }
-
-  &-disabled{
+  &-disabled {
     cursor: no-drop;
     background: @bg-disabled-color;
     .@{__switch-prefix-cls}-inner {
-        color: @text-disabled-color;
+      color: @text-disabled-color;
     }
-    &:after{
-      background: @basic-100;
+    &:after {
+      background: @normal-alpha-7;
       animation-name: none;
       cursor: no-drop;
     }
-
-    &:hover:after{
+    &:hover:after {
       transform: scale(1);
       animation-name: none;
     }
   }
-
   &-label {
     display: inline-block;
     line-height: 20px;
@@ -101,14 +87,12 @@
     pointer-events: none;
     user-select: text;
   }
-
   &-no-text {
     width: 40px;
     &.@{__switch-prefix-cls}-checked:after {
       left: 18px;
     }
   }
-  
 }
 
 @keyframes rcSwitchOn {
@@ -122,6 +106,7 @@
     transform: scale(1.1);
   }
 }
+
 @keyframes rcSwitchOff {
   0% {
     transform: scale(1.1);
@@ -130,4 +115,3 @@
     transform: scale(1);
   }
 }
-
