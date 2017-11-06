@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-const RcSwitch = require('rc-switch');
+import RcSwitch  from 'rc-switch'
 
 class Switch extends RcSwitch {}
 
