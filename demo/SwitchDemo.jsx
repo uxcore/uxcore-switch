@@ -41,6 +41,7 @@ class Demo extends React.Component {
         />
         <h2>禁用</h2>
         <Switch
+          defaultChecked
           checkedChildren="显示"
           unCheckedChildren="隐藏"
           disabled
@@ -58,9 +59,14 @@ class Demo extends React.Component {
         />
         <h2>无文字的</h2>
         <Switch
-          className="kuma-switch-no-text"
           checkedChildren=""
           unCheckedChildren=""
+        />
+        <h2>加载中</h2>
+        <Switch
+          loading
+          checkedChildren="显示"
+          unCheckedChildren="隐藏"
         />
       </div>
     );
