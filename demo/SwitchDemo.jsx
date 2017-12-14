@@ -11,7 +11,6 @@ const React = require('react');
 const Switch = require('../src');
 
 class Demo extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -46,6 +45,12 @@ class Demo extends React.Component {
           unCheckedChildren="隐藏"
           disabled
         />
+        <h2>禁用 (Off)</h2>
+        <Switch
+          checkedChildren="显示"
+          unCheckedChildren="隐藏"
+          disabled
+        />
         <h2>受控</h2>
         <Switch
           checked={this.state.checked}
@@ -65,8 +70,23 @@ class Demo extends React.Component {
         <h2>加载中</h2>
         <Switch
           loading
-          checkedChildren="显示"
-          unCheckedChildren="隐藏"
+          defaultChecked
+        />
+        <h2>完整的加载</h2>
+        <Switch
+          loading={this.state.loading}
+          checked={this.state.checked}
+          onChange={(checked) => {
+            this.setState({
+              loading: true,
+            });
+            setTimeout(() => {
+              this.setState({
+                checked,
+                loading: false,
+              });
+            }, 2000);
+          }}
         />
       </div>
     );
