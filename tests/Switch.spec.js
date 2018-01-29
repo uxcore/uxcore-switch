@@ -10,6 +10,6 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('Switch', () => {
   it ('should be render correctly', () => {
-    mount(<Switch />)
+    mount(<Switch />);
   });
 });
