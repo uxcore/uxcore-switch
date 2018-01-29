@@ -37,7 +37,6 @@
     background-color: #ffffff;
     content: " ";
     cursor: pointer;
-    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
     transform: scale(1);
     transition: left @duration cubic-bezier(0.35, 0, 0.25, 1);
     animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
@@ -76,6 +75,15 @@
       transform: scale(1);
       animation-name: none;
     }
+    &.@{__switch-prefix-cls}-checked {
+      background: @brand-primary-alpha-4;
+      .@{__switch-prefix-cls}-inner {
+        color: white;
+      }
+      &:after {
+        background: white;
+      }
+    }
   }
   &-label {
     display: inline-block;
@@ -87,10 +95,36 @@
     pointer-events: none;
     user-select: text;
   }
+  &-loading {
+    &:before {
+      content: "\e6b6";
+      font-family: uxcore!important;
+      font-size: 12px;
+      font-style: normal;
+      position: absolute;
+      left: 6px;
+      top: 0px;
+      z-index: 2;
+      color: @normal-alpha-3;
+      transition: left @duration cubic-bezier(0.35, 0, 0.25, 1);
+      animation: switchLoadingRotate 1s linear infinite;
+    }
+    &.@{__switch-prefix-cls}-checked {
+      &:before {
+        color: @brand-primary;
+        left: 45px;
+      }
+    }
+  }
   &-no-text {
     width: 40px;
-    &.@{__switch-prefix-cls}-checked:after {
-      left: 18px;
+    &.@{__switch-prefix-cls}-checked {
+      &:after {
+        left: 18px;
+      }
+      &:before {
+        left: 21px;
+      }
     }
   }
 }
@@ -113,5 +147,14 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes switchLoadingRotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

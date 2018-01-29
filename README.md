@@ -33,6 +33,7 @@ http://uxcore.github.io/
 |onChange|Function(checked)|required|变化时发生|
 |checkedChildren|string|optional|-|选中时的文案|
 |unCheckedChildren|string|optional|-|未选中时的文案|
+|loading|bool|optional|false|loading 状态|
 
 
 
