@@ -11,4 +11,16 @@ describe('Switch', () => {
   it ('should be render correctly', () => {
     mount(<Switch />);
   });
+
+  it ('should be render correctly if checked', () => {
+    mount(<Switch checked />);
+  });
+
+  it ('should be render correctly if checked defaultly', () => {
+    mount(<Switch defaultChecked />);
+  });
+
+  it ('should be render correctly during loading', () => {
+    mount(<Switch loading />);
+  });
 });
