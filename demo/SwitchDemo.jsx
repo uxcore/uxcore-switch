@@ -14,7 +14,9 @@ class Demo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: false,
+      controlledChecked: false,
+      delayChecked: false,
+      delayLoading: false
     };
   }
 
@@ -53,12 +55,12 @@ class Demo extends React.Component {
         />
         <h2>受控</h2>
         <Switch
-          checked={this.state.checked}
+          checked={this.state.controlledChecked}
           checkedChildren="显示"
           unCheckedChildren="隐藏"
           onChange={() => {
             this.setState({
-              checked: !this.state.checked,
+              controlledChecked: !this.state.controlledChecked,
             });
           }}
         />
@@ -74,16 +76,16 @@ class Demo extends React.Component {
         />
         <h2>完整的加载</h2>
         <Switch
-          loading={this.state.loading}
-          checked={this.state.checked}
+          loading={this.state.delayLoading}
+          checked={this.state.delayChecked}
           onChange={(checked) => {
             this.setState({
-              loading: true,
+              delayLoading: true,
             });
             setTimeout(() => {
               this.setState({
-                checked,
-                loading: false,
+                delayChecked: checked,
+                delayLoading: false,
               });
             }, 2000);
           }}
