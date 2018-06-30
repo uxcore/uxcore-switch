@@ -1,6 +1,6 @@
 {
   "name": "uxcore-switch",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "uxcore-switch component for uxcore.",
   "repository": "https://github.com/uxcore/uxcore-switch.git",
   "author": "eternalsky",
@@ -42,7 +42,7 @@
     "react-addons-test-utils": "15.x",
     "react-dom": "16.x",
     "react-test-renderer": "16.x",
-    "uxcore-kuma": "*",
+    "uxcore-kuma": "^12.2.0",
     "uxcore-tools": "0.3.x"
   },
   "dependencies": {
