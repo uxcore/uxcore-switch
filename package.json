@@ -1,6 +1,6 @@
 {
   "name": "uxcore-switch",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "uxcore-switch component for uxcore.",
   "repository": "https://github.com/uxcore/uxcore-switch.git",
   "author": "eternalsky",
@@ -47,7 +47,7 @@
   "dependencies": {
     "classnames": "^2.1.2",
     "object-assign": "^4.0.0",
-    "rc-switch": "^1.6.0"
+    "rc-switch": "~1.7.0"
   },
   "contributors": [],
   "license": "MIT"

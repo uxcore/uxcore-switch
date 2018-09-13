@@ -13,13 +13,18 @@ import PropTypes from 'prop-types';
 
 class Switch extends React.Component {
   render() {
-    const { loading, className, disabled, ...otherProps } = this.props;
+    const {
+      loading, className, disabled, prefixCls, checkedChildren, unCheckedChildren, ...otherProps
+    } = this.props;
     return (
       <RcSwitch
         {...otherProps}
+        prefixCls={prefixCls}
+        checkedChildren={checkedChildren}
+        unCheckedChildren={unCheckedChildren}
         className={classnames({
-          [`${this.props.prefixCls}-loading`]: !!loading,
-          [`${this.props.prefixCls}-no-text`]: !this.props.checkedChildren && !this.props.unCheckedChildren,
+          [`${prefixCls}-loading`]: !!loading,
+          [`${prefixCls}-no-text`]: !checkedChildren && !unCheckedChildren,
           [className]: !!className,
         })}
         disabled={disabled || loading}
