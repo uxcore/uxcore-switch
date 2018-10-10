@@ -1,3 +1,7 @@
+## 0.1.13
+
+* `CHANGED` support js style export
+
 ## 0.1.12
 
 * `CHANGED` fix `rc-switch` version to `~1.7.0` to avoid style breaking change 

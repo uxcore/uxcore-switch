@@ -6,9 +6,8 @@
  * All rights reserved.
  */
 
-@__switch-prefix-cls: kuma-switch;
-@duration: .3s;
-.@{__switch-prefix-cls} {
+@__switchPrefixCls: kuma-switch;
+.@{__switchPrefixCls} {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -20,7 +19,7 @@
   border-radius: 12px;
   background-color: @normal-alpha-6;
   cursor: pointer;
-  transition: all @duration cubic-bezier(0.35, 0, 0.25, 1);
+  transition: all .3s cubic-bezier(0.35, 0, 0.25, 1);
   &-inner {
     color: #fff;
     font-size: 12px;
@@ -38,9 +37,9 @@
     content: " ";
     cursor: pointer;
     transform: scale(1);
-    transition: left @duration cubic-bezier(0.35, 0, 0.25, 1);
+    transition: left .3s cubic-bezier(0.35, 0, 0.25, 1);
     animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
-    animation-duration: @duration;
+    animation-duration: .3s;
     animation-name: rcSwitchOff;
   }
   &:hover:after {
@@ -53,7 +52,7 @@
   }
   &-checked {
     background-color: @brand-primary;
-    .@{__switch-prefix-cls}-inner {
+    .@{__switchPrefixCls}-inner {
       left: 10px;
     }
     &:after {
@@ -63,7 +62,7 @@
   &-disabled {
     cursor: no-drop;
     background: @normal-alpha-8;
-    .@{__switch-prefix-cls}-inner {
+    .@{__switchPrefixCls}-inner {
       color: @text-disabled-color;
     }
     &:after {
@@ -75,9 +74,9 @@
       transform: scale(1);
       animation-name: none;
     }
-    &.@{__switch-prefix-cls}-checked {
+    &.@{__switchPrefixCls}-checked {
       background: @brand-primary-alpha-4;
-      .@{__switch-prefix-cls}-inner {
+      .@{__switchPrefixCls}-inner {
         color: white;
       }
       &:after {
@@ -106,10 +105,10 @@
       top: -1px;
       z-index: 2;
       color: @normal-alpha-3;
-      transition: left @duration cubic-bezier(0.35, 0, 0.25, 1);
+      transition: left .3s cubic-bezier(0.35, 0, 0.25, 1);
       animation: switchLoadingRotate 1s linear infinite;
     }
-    &.@{__switch-prefix-cls}-checked {
+    &.@{__switchPrefixCls}-checked {
       &:before {
         color: @brand-primary;
         left: 45px;
@@ -118,7 +117,7 @@
   }
   &-no-text {
     width: 40px;
-    &.@{__switch-prefix-cls}-checked {
+    &.@{__switchPrefixCls}-checked {
       &:after {
         left: 18px;
       }
